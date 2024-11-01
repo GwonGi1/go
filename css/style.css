@@ -310,12 +310,12 @@ h6 {
 .html {
   width: 2rem;
   height: 2rem;
-  background: url('../image/html누끼.png')no-repeat center/contain;
+  /* background: url('../image/html누끼.png')no-repeat center/contain; */
 }
 .css {
   width: 2rem;
   height: 2rem;
-  background: url('../image/css.png')no-repeat center/contain;
+  background: url('../image/찐\ css.png')no-repeat center/contain;
 }
 .jv {
   width: 2rem;
