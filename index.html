@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <meta name="robots" content="All">
+    <meta name="Yeti" content="index, follow">
+    <meta name="Yeti" content="All">
+    <meta name="googlebot" content="All">
+    <meta name="googlebot" content="index, follow">
+    <meta name="daumoa" content="All">
+    <meta name="daumoa" content="index, follow">
+    <meta name="title" content="비디오그래퍼 - 권기원 포트폴리오">
+    <meta name="description" content="비디오그래퍼. 포트폴리오 방문을 환영합니다">
+    <meta name="keywords" content="비오그래퍼, 영상편집자">
+    <meta name="author" content="권기원">
+    <meta name="content-language" content="kr">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GiWon">
+    <meta property="og:title" content="GiWon">
+    <meta property="og:description" content="video grapher">
+    <meta property="og:image" content="image/카메라.jpeg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+
+
+    <link rel="stylesheet" href="css/jquery.fullpage.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.fullpage.js"></script>
+    <script src="js/main.js"></script>
+    <!-- fullpage는 defer안붙임. 제이쿼리 cdn가지고 올 때도 안붙이는 것처럼. 자기가 쓴것만 붙이면 됨. -->
+    <style>
+        body,
+        div,
+        h1,
+        h2,
+        form,
+        fieldset,
+        input,
+        textarea,
+        footer,
+        p {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: none;
+        }
+
+
+        @font-face {
+            font-family: 'YanoneKaffeesatzRegular';
+            src: url('yanonekaffeesatz-regular-webfont.eot');
+            src: url('yanonekaffeesatz-regular-webfont.eot?#iefix') format('embedded-opentype'),
+                url('yanonekaffeesatz-regular-webfont.woff') format('woff'),
+                url('yanonekaffeesatz-regular-webfont.ttf') format('truetype'),
+                url('yanonekaffeesatz-regular-webfont.svg#YanoneKaffeesatzRegular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background: #ccc url(image/bg_out.png);
+            color: #7c7873;
+            font-family: 'YanoneKaffeesatzRegular';
+        }
+
+        p {
+            text-shadow: 0 1px 0 #fff;
+            font-size: 24px;
+        }
+
+        #wrap {
+            width: 530px;
+        }
+
+        header h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 48px;
+            /* text-shadow: 0 1px 0 #ede8d9; */
+        }
+
+
+        #form_wrap {
+            overflow: hidden;
+            height: 776px;
+            position: relative;
+            top: -200px;
+            -webkit-transition: all 1s ease-in-out .3s;
+            -moz-transition: all 1s ease-in-out .3s;
+            -o-transition: all 1s ease-in-out .3s;
+            transition: all 1s ease-in-out .3s;
+            padding: 0 15px;
+            /* 좌우 여백 추가 */
+        }
+
+        /* #form_wrap:before {
+            content: "";
+            position: absolute;
+            bottom: 128px;
+            left: 0px;
+            background: url(image/before.png);
+            filter: hue-rotate(300deg) brightness(1.5);
+            width: 530px;
+            height: 316px;
+        }
+
+        #form_wrap:after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            background: url(image/after.png);
+            filter: hue-rotate(190deg) brightness(2);
+            width: 530px;
+            height: 260px;
+        } */
+
+        /* #form_wrap.hide:after,
+        #form_wrap.hide:before {
+            display: none;
+        }
+
+        #form_wrap:hover {
+            height: 776px;
+            top: -200px;
+        } */
+
+
+        form {
+            background: #f7f2ec url(image/letter_bg.png);
+            position: relative;
+            top: 200px;
+            overflow: hidden;
+            height: 530px;
+            width: calc(100% - 30px);
+            /* 전체 너비에서 좌우 여백을 뺀 값으로 설정 */
+            margin: 0px auto;
+            padding: 20px;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            box-shadow: 0px 0px 3px #9d9d9d, inset 0px 0px 27px #fff;
+            -moz-box-shadow: 0px 0px 3px #9d9d9d, inset 0px 0px 14px #fff;
+            -webkit-box-shadow: 0px 0px 3px #9d9d9d, inset 0px 0px 27px #fff;
+            -webkit-transition: all 1s ease-in-out .3s;
+            -moz-transition: all 1s ease-in-out .3s;
+            -o-transition: all 1s ease-in-out .3s;
+            transition: all 1s ease-in-out .3s;
+            margin: 20px auto 0;
+        }
+
+
+        /* #form_wrap:hover form {
+            height: 530px;
+        } */
+
+        label {
+            margin: 11px 20px 0 0;
+            font-size: 16px;
+            color: #b3aba1;
+            text-transform: uppercase;
+            text-shadow: 0px 1px 0px #fff;
+        }
+
+        input[type=text],
+        textarea {
+            font: 14px normal normal uppercase helvetica, arial, serif;
+            color: #7c7873;
+            background: none;
+            width: 380px;
+            height: 36px;
+            padding: 0px 10px;
+            margin: 0 0 10px 0;
+            border: 1px solid #f8f5f1;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -moz-box-shadow: inset 0px 0px 1px #726959;
+            -webkit-box-shadow: inset 0px 0px 1px #b3a895;
+            box-shadow: inset 0px 0px 1px #b3a895;
+        }
+
+        textarea {
+            height: 80px;
+            padding-top: 14px;
+        }
+
+        textarea:focus,
+        input[type=text]:focus {
+            background: rgba(255, 255, 255, .35);
+        }
+
+        #form_wrap input[type=submit] {
+            position: relative;
+            font-family: 'YanoneKaffeesatzRegular';
+            font-size: 24px;
+            color: #7c7873;
+            text-shadow: 0 1px 0 #fff;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            background: none;
+            cursor: pointer;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-transition: opacity .6s ease-in-out 0s;
+            -moz-transition: opacity .6s ease-in-out 0s;
+            -o-transition: opacity .6s ease-in-out 0s;
+            transition: opacity .6s ease-in-out 0s;
+        }
+
+        #form_wrap:hover input[type=submit] {
+            z-index: 1;
+            opacity: 1;
+            -webkit-transition: opacity .5s ease-in-out 1.3s;
+            -moz-transition: opacity .5s ease-in-out 1.3s;
+            -o-transition: opacity .5s ease-in-out 1.3s;
+            transition: opacity .5s ease-in-out 1.3s;
+        }
+
+        #form_wrap:hover input:hover[type=submit] {
+            color: #435c70;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <!-- <div class="left">
+                <nav>
+                    <ul class="menu align-center expanded text-center SMN_effect-24">
+                        <li data-menuanchor="page1"><a href="#page1"><span>Show reel</span></a></li>
+                        <li data-menuanchor="page2"><a href="#page2"><span>Start page</a></span></li>
+                        <li data-menuanchor="page3"><a href="#page3"><span>Profile</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <h1></h1>
+            <div class="right">
+                <nav>
+                    <ul class="menu align-center expanded text-center SMN_effect-24">
+                        <li data-menuanchor="page4"><a href="#page4"><span>Clone</span></a></li>
+                        <li data-menuanchor="page5"><a href="#page5"><span>Video</span></a></li>
+                        <li data-menuanchor="page6"><a href="#page6"><span>Contact</span></a></li>
+                    </ul>
+                </nav>
+            </div> -->
+
+            <h1><a href="#page1"></a></h1>
+
+            <nav>
+                <ul class="menu align-center expanded text-center SMN_effect-24">
+                    <li data-menuanchor="page2"><a href="#page2"><span>Profile</span></a></li>
+                    <li data-menuanchor="page3"><a href="#page3"><span>Video</span></a></li>
+                    <li data-menuanchor="page4"><a href="#page4"><span>Photoshop</span></a></li>
+                    <li data-menuanchor="page5"><a href="#page5"><span>Clone</span></a></li>
+                    <li data-menuanchor="page6"><a href="#page6"><span>Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="fullpage">
+        <section class="section show">
+            <video src="video/뉴 릴.mp4" muted data-autoplay loop></video>
+        </section>
+        <!-- <section class="section">
+            <div class="containers s1">
+                <div class="section1-box"></div>
+                <div class="portfolio-box">
+                    <h1 class="h-port">Portfolio</h1>
+                </div>
+                <div class="cr-box">
+                    <h1 class="h-cr">Character</h1>
+                </div>
+            </div>
+        </section> -->
+        <section class="section">
+            <div class="containers s2">
+                <div class="section2-box">
+                    <div>Profile</div>
+                    <div class="face"></div>
+                    <div class="business">
+                        <h1 class="name">권기원</h1>
+                        <h4>영상 디자이너</h4>
+                        <h6>1996.09.24</h6>
+                        <div class="skills">
+                            <p class="pp"></p>
+                            <p class="af"></p>
+                            <p class="ph"></p>
+                            <p class="html"></p>
+                            <p class="css"></p>
+                            <p class="jv"></p>
+                        </div>
+                        <!-- <div class='business-card'>
+                            <div class='content'>
+                                <div class='top'>
+                                    <div class='name'>Joe Hastings</div>
+                                    <div class='profession'>Front end developer</div>
+                                </div>
+                                <div class='bottom'>
+                                    <div class='left'>
+                                        <div class='email'>joehastings1991@gmail.com</div>
+                                        <div class='phone'>+447795123456</div>
+                                        <div class='website'>joehastings.co.uk</div>
+                                    </div>
+                                    <div class='right'>
+                                        <div class='location'>Cambridge, UK</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='background'>
+                                <div class='slice'></div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="license">
+                        <h3>GTQ 포토샵 1급</h3>
+                        <h3>드론자격증 1종</h3>
+                    </div>
+                    <div class="sns">
+                        <ul class="snsul">
+                            <li class="insta"><a href="https://www.instagram.com/1.with.1/" target="_blank">
+                                    <img src="image/인스타그램.png" alt="">
+                                </a></li>
+                            <li class="notion"><a href="#">
+                                    <img src="image/노션.png" alt="">
+                                </a></li>
+                            <li class="email"><a href="#page6">
+                                    <img src="image/email.png" alt="">
+                                </a></li>
+                        </ul>
+                    </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="containers s4">
+                <div class="section4-box">
+                    <div>Video</div>
+                    <div class="videos">
+                        <div class="video v1">
+                            <div class="title">Title sequence</div>
+                            <div class="movie"><iframe width="200" height="138"
+                                    src="https://www.youtube.com/embed/t_9ebiqNA6I?si=C8Z3lo_-Un0PRGA2&controls=0"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="video v2">
+                            <div class="title">Interview</div>
+                            <div class="movie"><iframe width="200" height="138"
+                                    src="https://www.youtube.com/embed/APMl9uoUsYA?si=Dab8IeLeKA7GAFZi&controls=0"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="video v3">
+                            <div class="title">Live 2D</div>
+                            <div class="movie"><iframe width="200" height="138"
+                                    src="https://www.youtube.com/embed/9puZqveCQLU?si=VyTR3iGIG3OQWvji&controls=0"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="video v4">
+                            <div class="title">Workflow</div>
+                            <div class="movie"><iframe width="200" height="138"
+                                    src="https://www.youtube.com/embed/5J9WS8Mydic?si=Q_ZvwzZYuPVy0y3c&controls=0"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="video v5">
+                            <div class="title">Wedding Video</div>
+                            <div class="movie"><iframe width="200" height="138" src="https://www.youtube.com/embed/Ij-3Py-zBNE?si=Z9fI0YZArrFl4oqX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="video v6">
+                            <div class="title">Advertising Video</div>
+                            <div class="movie"><iframe width="200  " height="138" src="https://www.youtube.com/embed/IywjL3uMBBM?si=pfOuoDoggOj2Kv9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="video v7">
+                            <div class="title">Interview</div>
+                            <div class="movie"><iframe width="200" height="138" src="https://www.youtube.com/embed/f14c5d9fL8Y?si=bJgVhoj2-Ly3Ff3x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="video v8">
+                            <div class="title">Event</div>
+                            <div class="movie"><iframe width="200" height="138" src="https://www.youtube.com/embed/Lbl9RDxkV_Q?si=z1mqBNRm3KdanUpi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="video v9">
+                            <div class="title">Video billboard</div Videoiv>
+                            <div class="movie"><iframe width="200" height="138" src="https://www.youtube.com/embed/jb-VtUFvEAE?si=RXDqh-VBvXQavJRf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="video v10">
+                            <div class="title">Coming soon</div>
+                            <div class="movie"><iframe width="200" height="138" src="https://www.youtube.com/embed/IywjL3uMBBM?si=pfOuoDoggOj2Kv9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="containers s6">
+                <div class="section6-box">
+                    <div>Photoshop</div>
+                    <div class="photoshop">
+                        <div class="daeguFC">
+                            <a href="https://www.instagram.com/p/DBcw9lnzfQY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                class="content" target="_blank"></a>
+                            <a href="https://www.instagram.com/p/DBcw9lnzfQY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                class="click" target="_blank">'click'</a>
+                        </div>
+                        
+                        <!-- <div class="c2 future">
+                    <div>300 X 200</div>
+                    <div class="button">
+
+                        <button><a href="#">Original</a></button>
+                        <button><a href="#">Clone</a></button>
+                    </div>
+                </div> -->
+                        <!-- <div class="c3 future">
+                    <div>300 X 200</div>
+                    <div class="button">
+
+                        <button><a href="#">Original</a></button>
+                        <button><a href="#">Clone</a></button>
+                    </div>
+                </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="containers s3">
+                <div class="section3-box">
+                    <div>Clone</div>
+                    <div class="clone">
+                        <div class="c1 future">
+                            <div>Coming soon</div>
+                            <div class="button">
+
+                                <button><a href="#">Original</a></button>
+                                <button><a href="#">Clone</a></button>
+                            </div>
+                        </div>
+                        <!-- <div class="c2 future">
+                            <div>300 X 200</div>
+                            <div class="button">
+
+                                <button><a href="#">Original</a></button>
+                                <button><a href="#">Clone</a></button>
+                            </div>
+                        </div> -->
+                        <!-- <div class="c3 future">
+                            <div>300 X 200</div>
+                            <div class="button">
+
+                                <button><a href="#">Original</a></button>
+                                <button><a href="#">Clone</a></button>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <div class="containers s5">
+                <div class="section5-box">
+                    <div id="wrap">
+                        <!-- <h1>Send a message</h1> -->
+                        <div id='form_wrap'>
+                            <form action="https://formspree.io/f/myyrkwda" method="post">
+                                <p>Contact Me!</p>
+                                <label for="email">Your Message : </label>
+                                <textarea name="message" value="Your Message" id="message"></textarea>
+                                <label for="name">Name: </label>
+                                <input type="text" name="name" value="" id="name" />
+                                <label for="email">Email: </label>
+                                <input type="text" name="email" value="" id="email" />
+                                <input type="submit" name="submit" value="Now, I send, thanks!" />
+                            </form>
+                        </div>
+                    </div>
+                    <!-- 요정 -->
+                    <div class="fairy-r">
+                        <div class="wings"></div>
+                        <div class="glow">
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                        </div>
+                    </div>
+                    <div class="fairy-l">
+                        <div class="wings"></div>
+                        <div class="glow">
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                        </div>
+                    </div>
+                    <div class="fairy-m">
+                        <div class="wings"></div>
+                        <div class="glow m">
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section fp-auto-height">
+            <p>Gi Won &copy; All Right Reserved</p>
+        </div>
+    </main>
+
+</body>
+
+</html>
