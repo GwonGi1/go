@@ -307,6 +307,11 @@ h6 {
   height: 2rem;
   background: url('../image/포토샵.png')no-repeat center/contain;
 }
+.in {
+  width: 2rem;
+  height: 2rem;
+  background: url('../image/인디자인.png')no-repeat center/contain;
+}
 .html {
   width: 2rem;
   height: 2rem;
