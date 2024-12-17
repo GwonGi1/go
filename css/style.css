@@ -651,6 +651,33 @@ h6 {
   color: #1e2e5f;
 }
 
+.pegasus {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 48.5%;
+  height: 64.9%;
+  margin-top: 17.5%;
+  border-radius: 15px;
+  /* box-shadow: 0px 7px 23px 0px rgba(0, 0, 0, 0.3); */
+}
+
+.pegasus .content {
+  box-shadow: 0px 7px 23px 0px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  margin-top: 5%;
+  width: 80%;
+  height: 80%;
+  border-radius: 15px;
+  background: url('../image/페가수스.jpg')no-repeat center/contain;
+}
+
+.pegasus .click {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  color: #1e2e5f;
+}
+
 .section5-box {
   width: 60%;
   height: 85%;
